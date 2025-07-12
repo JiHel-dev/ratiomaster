@@ -1,0 +1,3 @@
+[submodule "Ratio/Ratio.py"]
+	path = Ratio/Ratio.py
+	url = https://github.com/MisterDaneel/Ratio.py.git
