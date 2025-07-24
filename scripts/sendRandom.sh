@@ -1,8 +1,7 @@
 #!/bin/bash
 
-TORRENTS_DIR = "/path/to/torrents"
-
-cp "$(ls $TORRENTS_DIR/*.torrent | shuf -n 1)" file.torrent
+echo "Starting sending sequence after a quick rest"
+cp "$(ls ./torrents/*.torrent | shuf -n 1)" file.torrent
 sleep $(($RANDOM%600))
 sizeToSend=$((30*$(python3 torrentSize.py)/100))
 secondsToWait=$(($sizeToSend/100000))
@@ -14,6 +13,7 @@ then
 	exit
 fi
 
-python3 Ratio.py/ratio.py -c conf.json &
+python3 ./Ratio.py/ratio.py -c conf.json &
 sleep $secondsToWait
 kill $!
+echo "Ending sending sequence"

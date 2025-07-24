@@ -1,0 +1,4 @@
+services:
+  build: .
+  volumes:
+    - ${TORRENTS_DIR}:/app/torrents:ro
