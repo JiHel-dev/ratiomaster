@@ -2,7 +2,7 @@
 
 TARGET_HOUR=18
 
-[ -z "$var" ] && CONF="standard"
+[ -z "$CONF" ] && CONF="standard"
 echo "With configuration $CONF"
 cp conf.json.$CONF conf.json
 

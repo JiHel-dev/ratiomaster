@@ -17,4 +17,4 @@ RUN chown nobody /app
 USER nobody
 
 WORKDIR /app
-ENTRYPOINT [ "/app/sendRandom.sh" ]
+ENTRYPOINT [ "/app/scheduler.sh" ]

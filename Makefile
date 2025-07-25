@@ -15,11 +15,10 @@ define CHECK_VARS
 endef
 
 build:
-	$(call CHECK_VARS)
 	@echo "Building container with $(DOCKER_COMPOSE)..."
-	@TORRENTS_DIR=$(TORRENTS_DIR) $(DOCKER_COMPOSE) build
+	$(DOCKER_COMPOSE) build
 
 install:
 	$(call CHECK_VARS)
 	@echo "Installing container with $(DOCKER_COMPOSE)..."
-	@TORRENTS_DIR=$(TORRENTS_DIR) $(DOCKER_COMPOSE) up --no-start
+	@TORRENTS_DIR=$(TORRENTS_DIR) $(DOCKER_COMPOSE) $(INSTALL_ARGS) up --no-start
