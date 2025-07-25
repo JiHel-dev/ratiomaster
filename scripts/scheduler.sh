@@ -9,14 +9,14 @@ cp conf.json.$CONF conf.json
 LOOP=0
 while true; do
     # Stop condition
-    if [[ -n "$MAX_RUN" && "$count" -ge "$MAX_RUN" ]]; then
+    if [[ -n "$MAX_RUN" && "$COUNT" -ge "$MAX_RUN" ]]; then
         echo "Maximal number of loop reached ($MAX_RUN). Stopping."
         exit 0
     fi 
 
     NOW=$(date +%s)
     NEXT_RUN=$(date -d "tomorrow ${TARGET_HOUR}:00" +%s)
-    
+
     TODAY_TARGET=$(date -d "${TARGET_HOUR}:00" +%s)
     if [[ "$NOW" -lt "$TODAY_TARGET" ]]; then
         NEXT_RUN=$TODAY_TARGET
@@ -26,6 +26,7 @@ while true; do
     sleep "$SLEEP_SECONDS"
     echo "Running script $(date)"
     ./sendRandom.sh
+    sleep 1
     COUNT=$((COUNT + 1)) 
     echo "Run number $COUNT over"
 done
