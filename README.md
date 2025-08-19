@@ -37,11 +37,11 @@ If you want to use the good way and run this application with docker you just ne
   Build image
 - `TORRENTS_DIR=/path/to/torrents/dir/ make install`  
   Install image linking to torrent repository
-- `docker start ratiomaster_services_1`  
+- `docker start ratiomaster`  
   Run docker
 
 Optionnally you can schedule an auto restart with  
-`docker update --restart unless-stopped ratiomaster_services_1`
+`docker update --restart unless-stopped ratiomaster`
 
 ## Native installation  
 You should'nt do this.
