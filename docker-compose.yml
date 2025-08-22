@@ -1,9 +1,10 @@
 services:
-  build: .
-  volumes:
-    - ${TORRENTS_DIR}:/app/torrents:ro
-  env_file: "ratiomaster.env"
-  dns:
-    - 9.9.9.9
-    - 9.9.9.10
-  container_name: ratiomaster
+  app:
+    build: .
+    volumes:
+      - ${TORRENTS_DIR}:/app/torrents:ro
+    env_file: "ratiomaster.env"
+    dns:
+      - 9.9.9.9
+      - 9.9.9.10
+    container_name: ratiomaster

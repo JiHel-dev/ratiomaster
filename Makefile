@@ -1,7 +1,7 @@
 ifeq (, $(shell which docker-compose 2> /dev/null))
-	DOCKER_COMPOSE="docker compose"
+	DOCKER_COMPOSE=docker compose
 else
-	DOCKER_COMPOSE="docker-compose"
+	DOCKER_COMPOSE=docker-compose
 endif
 
 REQUIRED_VARS := TORRENTS_DIR

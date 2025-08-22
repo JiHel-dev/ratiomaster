@@ -33,7 +33,7 @@ So you will find by yourself everything you need to run without docker.
 If you want to use the good way and run this application with docker you just need to :
 - `nano ratiomaster.env`  
   Modify ratiomaster.env file to match your need (configuration file and number of consecutive runs)
-- `make build`  
+- `TORRENTS_DIR=/path/to/torrents/dir/ make build`  
   Build image
 - `TORRENTS_DIR=/path/to/torrents/dir/ make install`  
   Install image linking to torrent repository
